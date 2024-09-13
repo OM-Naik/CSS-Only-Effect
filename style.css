@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: Poppins;
+    color: #1E1E1E;
+    background-color: #CDCDCD;
+    background-image:
+        repeating-linear-gradient(to right, transparent 0 150px, #0001 150px 151px),
+        repeating-linear-gradient(to bottom, transparent 0 150px, #0001 150px 151px),
+        linear-gradient(to right, #CDCDCDcc, #CDCDCDcc),
+        url(images/bg1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: url('https://img.icons8.com/3d-fluency/94/orange.png'), auto;
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    width: min(1200px, 90vw);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    height: 0px;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-family: "Karantina", system-ui;
+    font-size: 16vw;
+    line-height: 0.8em;
+}
+
+header .author {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+header h3 {
+    font-family: "Karantina", system-ui;
+    font-size: 5vw;
+}
+
+header .author div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .author div p:nth-child(2) {
+    font-weight: 500;
+}
+
+header .author img {
+    width: 250px;
+}
+
+.banner {
+    margin-top: -50px;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.product {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 170px;
+    z-index: 2;
+    width: 500px;
+    transition: 0.7s;
+}
+
+.product .soda {
+    position: absolute;
+    bottom: 0;
+    left: calc(50%);
+    transform: translateX(-50%);
+}
+
+.soda {
+    --left: 830px;
+    background:
+        var(--url) var(--left),
+        url(images/mockup.png) 0 0;
+    background-size: auto 100%;
+    width: 280px;
+    aspect-ratio: 2 / 4;
+    background-blend-mode: multiply;
+    transition: 0.8s;
+    mask-image: url(images/mockup.png);
+    mask-size: auto 100%;
+}
+
+.soda:nth-child(2) {
+    opacity: 0;
+}
+
+.product:hover {
+    bottom: 160px;
+    cursor: url('https://img.icons8.com/external-filled-color-icons-papa-vector/78/external-cute-fruits-and-vegetables-kawaii-color-filled-filled-color-icons-papa-vector.png'), auto;
+}
+
+.product:hover .soda:nth-child(2) {
+    opacity: 1;
+    --left: 330px;
+}
+
+.product:hover .soda:nth-child(1) {
+    opacity: 0;
+    --left: 500px;
+}
+
+.left img {
+    animation: zoomin;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}
+
+@keyframes zoomin {
+    0% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.2);
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+.author {
+    animation: autoShowAnimation;
+    animation-duration: 2s;
+}
+
+@keyframes autoShowAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(0px) scale(0.3);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.canb {
+    background-image: url(images/op.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: -100px;
+    opacity: 0;
+    width: 20%;
+}
+
+.canb:nth-child(2) {
+    animation-delay: 0.5s;
+    height: 20%;
+    left: 0px;
+    animation: canbAnimation1;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.canb:nth-child(3) {
+    animation-delay: 1s;
+    height: 10%;
+    left: 430px;
+    animation: canbAnimation2;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.canb:nth-child(4) {
+    animation-delay: 1.5s;
+    height: 17%;
+    right: 500px;
+    z-index: 3;
+    animation: canbAnimation2;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+.canb:nth-child(5) {
+    animation-delay: 2s;
+    height: 10%;
+    right: 0px;
+    animation: canbAnimation1;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes canbAnimation1 {
+    0% {
+        transform: translateY(-100px) rotate(0deg)
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(700px) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes canbAnimation2 {
+    0% {
+        transform: translateY(-100px) rotate(180deg)
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(750px) rotate(0deg);
+        opacity: 0;
+    }
+}
+
+.sodadrop {
+    background-image: url(images/wd.png);
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50px;
+    opacity: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 6%;
+    height: 6%;
+    animation: sodadrop;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+
+@keyframes sodadrop {
+    0% {
+        transform: translateX(-50%) translateY(0px);
+        opacity: 1;
+        z-index: 2;
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(50%) translateY(400px) rotate(-20deg);
+        scale: 0.8;
+        z-index: 2;
+    }
+
+    70% {
+        opacity: 0.5;
+        transform: translateX(100%) translateY(900px) rotate(-8deg);
+        scale: 0.5;
+        z-index: 2;
+    }
+
+    100% {
+        transform: translateX(230%) translateY(2300px) rotate(0deg);
+        opacity: 0;
+        scale: 0;
+        z-index: 0;
+    }
+}
+
+
+.rock {
+    position: absolute;
+    inset: 0 0 0 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.rock img:nth-child(1) {
+    position: absolute;
+    height: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    transition: 0.7s;
+    z-index: 1;
+}
+
+.rock img:nth-child(2) {
+    position: absolute;
+    height: 50%;
+    left: 0;
+    bottom: 0;
+    transition: 0.7s;
+}
+
+.rock img:nth-child(3) {
+    position: absolute;
+    height: 100%;
+    right: 0;
+    bottom: -100px;
+    rotate: -25deg;
+    transition: 0.7s;
+}
+
+.banner:has(.product:hover) .rock img:nth-child(1) {
+    transform: translateX(-50%) translateY(50px);
+}
+
+.banner:has(.product:hover) .rock img:nth-child(2) {
+    transform: translateX(-100px) translateY(100px);
+}
+
+.banner:has(.product:hover) .rock img:nth-child(3) {
+    transform: translateX(100px) translateY(100px);
+}
+
+@media screen and (max-width: 1023px) {
+
+    .soda {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .soda {
+        width: 240px;
+        --left: 710px;
+    }
+
+    .product:hover .soda:nth-child(2) {
+        --left: 290px;
+    }
+
+    header img {
+        display: none;
+    }
+
+    header .author {
+        width: 100%;
+    }
+
+    @keyframes sodadrop {
+        0% {
+            transform: translateX(-50%) translateY(0px);
+            opacity: 1;
+            z-index: 2;
+        }
+
+        50% {
+            opacity: 1;
+            transform: translateX(250%) translateY(400px) rotate(-20deg);
+            scale: 0.8;
+            z-index: 2;
+        }
+
+        70% {
+            opacity: 0.5;
+            transform: translateX(350%) translateY(800px) rotate(-8deg);
+            scale: 0.5;
+            z-index: 2;
+        }
+
+        100% {
+            transform: translateX(500%) translateY(2000px) rotate(0deg);
+            opacity: 0;
+            scale: 0;
+            z-index: 0;
+        }
+    }
+
+    .canb:nth-child(3) {
+        z-index: 2;
+        animation-delay: 1s;
+        height: 10%;
+        left: 170px;
+        animation: canbAnimation2;
+        animation-duration: 7s;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+    }
+
+}
