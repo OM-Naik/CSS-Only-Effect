@@ -1,3 +1,3 @@
 # CSS-Only-Effect
 
-![Screenshot](images/gif.gif)
+![Screenshot](images/Pgif.gif)
