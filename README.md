@@ -1,3 +1,3 @@
 # CSS-Only-Effect
 
-![Screenshot](Images/cursor.png)
+![Screenshot](images/cursor.png)
